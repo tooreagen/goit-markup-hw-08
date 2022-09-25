@@ -1,0 +1,120 @@
+.header {
+  border-bottom: 1px solid #ECECEC;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+
+.header__menu {
+  display: flex;
+  margin-left: 93px;  
+}
+
+.header__item {
+  &:not(:first-child) {
+    margin-left: 50px;
+  }
+}
+
+.header__link {
+  @extend %link;
+  position: relative;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  transition: color $animation-duration $animation-ttf;
+
+  color: $heading_text_color;
+
+  &:hover, &:focus {
+    color: $accent_color;
+  }
+
+  // selecteded active page
+  &--active-page::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: $accent_color;
+    border-radius: 2px;
+  }
+
+  // active page
+  &--active-page {
+    color: $accent_color;
+  }
+}
+
+ // animation link
+.header__item > :not(.header__link--active-page).header__link::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+
+  transition: transform $animation-duration $animation-ttf;
+  transform: scale(0);
+
+  background-color: $accent_color;
+  border-radius: 2px;
+}
+
+.header__item > :not(.header__link--active-page).header__link:hover::after,
+.header__item > :not(.header__link--active-page).header__link:focus::after {
+  transform: scale(1);
+}
+
+.header__contact {
+  display: flex;
+}
+
+.header__mail, .header__telephone {
+  @extend %link;
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  transition: color $animation-duration $animation-ttf;
+
+  color: $main_text_color;
+  fill: currentColor;
+
+  &:hover,
+  &:focus {
+    color: $accent_color;
+  }
+}
+
+.header__icon {
+  margin-right: 10px;
+}

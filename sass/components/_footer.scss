@@ -1,0 +1,129 @@
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    background: $hero_footer_background;
+}
+
+.footer__blocks {
+    display: flex;
+    align-items: baseline;
+}
+
+.address {
+    margin-top: 20px;
+    font-style: normal;
+}
+
+.address__item {
+    &:not(:first-child) {
+    margin-top: 9px;
+    }
+}
+
+.address__link {
+    @extend %link;
+    font-size: 14px;
+    line-height: 1.71;
+
+    transition: color $animation-duration $animation-ttf;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    &:hover,
+    &:focus {
+        color: $accent_color;
+    }
+}
+
+.address__link--color {
+    color: $white_text_color;
+}
+
+.social-links {
+    margin-left: 70px;
+}
+
+.social-links__heading {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+
+    color: $white_text_color;
+}
+
+.social-links__list {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-links__items {
+    &:not(:first-child) {
+        margin-left: 10px;
+    }
+}
+
+.social-links__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+
+    transition: background-color $animation-duration $animation-ttf;
+
+    fill: $background_color;
+
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    &:hover,
+    &:focus {
+        background-color: $accent_color;
+    }
+}
+
+.subscribe {
+    margin-left: 93px;
+}
+
+.subscribe__heading {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+
+    color: $white_text_color;
+}
+
+.subscribe__group {
+    display: flex;
+    margin-top: 20px;
+}
+
+.subscribe__email {
+    display: inline-block;
+    padding: 15px 16px;
+    width: 358px;
+
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+    background: $hero_footer_background;
+    color: rgba(255, 255, 255, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    outline: transparent;
+
+    &::placeholder {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
