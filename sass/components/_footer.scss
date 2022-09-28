@@ -1,13 +1,47 @@
 .footer {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    @include section(60px, 60px);
+
+    @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
+        padding-left: 76px;
+        padding-right: 86px;
+    }
 
     background: $hero_footer_background;
 }
 
 .footer__blocks {
-    display: flex;
-    align-items: baseline;
+    @media screen and (min-width: ($breakpoint_desktop)) {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.footer__address {
+    @media screen and (max-width: ($breakpoint_tablet - 1)) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+
+    @media screen and (min-width: ($breakpoint_desktop)) {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.footer__contacts {
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .address {
@@ -15,9 +49,17 @@
     font-style: normal;
 }
 
+.address__list {
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .address__item {
     &:not(:first-child) {
-    margin-top: 9px;
+        margin-top: 9px;
     }
 }
 
@@ -41,7 +83,19 @@
 }
 
 .social-links {
-    margin-left: 70px;
+    @media screen and (max-width: ($breakpoint_tablet - 1)) {
+        margin-top: 60px;
+    }
+
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        margin-left: 70px;
+    }
 }
 
 .social-links__heading {
@@ -85,7 +139,13 @@
 }
 
 .subscribe {
-    margin-left: 93px;
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        margin-top: 60px;
+    }
+
+    @media screen and (min-width: ($breakpoint_desktop)) {
+        margin-left: 93px;
+    }
 }
 
 .subscribe__heading {
@@ -95,11 +155,24 @@
     text-transform: uppercase;
 
     color: $white_text_color;
+
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        text-align: center;
+    }
 }
 
 .subscribe__group {
-    display: flex;
     margin-top: 20px;
+
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media screen and (min-width: ($breakpoint_desktop)) {
+        display: flex;
+    }
 }
 
 .subscribe__email {
@@ -125,5 +198,9 @@
         letter-spacing: 0.03em;
 
         color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        width: 450px;
     }
 }

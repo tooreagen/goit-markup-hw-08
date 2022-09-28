@@ -1,15 +1,40 @@
 .features {
-    @extend %section;
-    padding-bottom: 0;
+    @include section(60px, 60px);
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        @include section(94px, 94px);
+        padding-bottom: 0;
+    }
 }
 
 .features__list {
-    display: flex;
+    @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        display: flex;
+    }
 }
 
 .features__item {
-    &:not(:first-child) {
-        margin-left: 30px;
+    @media screen and (max-width: ($breakpoint_tablet - 1)) {
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint_tablet) and (max-width: $breakpoint_desktop) {
+        width: 354px;
+        height: 224px;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        &:not(:first-child) {
+            margin-left: 30px;
+        }
     }
 }
 
@@ -17,11 +42,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 270px;
+    width: 450px;
     height: 120px;
 
     background-color: $background_second_color;
     border-radius: 4px;
+
+    @media screen and (min-width: $breakpoint_tablet) {
+        width: 354px;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        width: 270px;
+    }
 }
 
 .features__heading {
@@ -33,6 +66,10 @@
     text-transform: uppercase;
 
     color: $heading_text_color;
+
+    @media screen and (max-width: $breakpoint_tablet) {
+        text-align: center;
+    }
 }
 
 .features__text {

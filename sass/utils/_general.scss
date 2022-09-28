@@ -1,6 +1,6 @@
-%section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+@mixin section ($padding-top, $padding-bottom) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
 }
 
 %link {
@@ -8,10 +8,18 @@
 }
 
 .container {
-  width: 1200px;
+  max-width: 480px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+
+  @media screen and (min-width: $breakpoint_tablet) {
+    max-width: $breakpoint_tablet;
+  }
+
+  @media screen and (min-width: $breakpoint_desktop) {
+    max-width: $breakpoint_desktop;
+  }
 }
 
 body {
