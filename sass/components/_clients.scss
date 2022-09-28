@@ -1,25 +1,45 @@
 .clients {
-    // @extend %section;
-}
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        @include section(60px, 60px);
+    }
 
-.section-heading {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.17;
-    text-align: center;
-
-    color: $heading_text_color;
+    @media screen and (min-width: ($breakpoint_desktop)) {
+        @include section(94px, 94px);
+    }
 }
 
 .clients__list {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        margin-top: 30px;
+    }
+
+    @media screen and (min-width: ($breakpoint_desktop)) {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
 }
 
 .clients__item {
-    width: 170px;
     height: 92px;
+
+    @media screen and (max-width: ($breakpoint_tablet - 1)) {
+        width: 210px;
+    }
+
+    @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
+        width: 226px;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        width: 170px;
+    }
 }
 
 .clients__link {
@@ -31,7 +51,6 @@
 
     transition: fill $animation-duration $animation-ttf, border-color $animation-duration $animation-ttf;
 
-
     fill: $icon_color;
     border: 1px solid $icon_color;
     border-radius: 4px;
@@ -41,6 +60,8 @@
         fill: $accent_color;
         border-color: $accent_color;
     }
+
+
 }
 
 .client__icon {

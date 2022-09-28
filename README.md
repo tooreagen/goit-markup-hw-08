@@ -1,9 +1,6 @@
 # goit-markup-hw-08
 
-/_ Применится когда ширина вьюпорта больше чем 900px _/ 
-@media (min-width: 900px) {
-     body { background-color: green; }
-      }
+/_ Применится когда ширина вьюпорта больше чем 900px _/ @media (min-width: 900px) { body { background-color: green; } }
 
 /_ Применится когда ширина вьюпорта меньше чем 600px _/ максимальный порог при котором применять стили @media (max-width: 600px) { body { background-color: yellow; } }
 
@@ -16,3 +13,5 @@
 320px to 480px responsive
 
 включить // "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+
+Проверить //
