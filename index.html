@@ -21,7 +21,7 @@
   </head>
   <body>
     <!-- Header (logo, menu) -->
-    <header class="header" hidden>
+    <header class="header">
       <div class="header__container container">
         <!-- Menu Nav -->
         <nav class="header__nav">
@@ -43,24 +43,28 @@
         </nav>
 
         <!-- Email,tel -->
-        <ul class="header__contact">
-          <li class="header__item">
-            <a class="header__mail" href="mailto:info@devstudio.com">
-              <svg class="header__icon" width="16" height="12">
+        <ul class="header-contact">
+          <li class="header-contact__item">
+            <a class="header-contact__mail" href="mailto:info@devstudio.com">
+              <svg class="header-contact__icon" width="16" height="12">
                 <use href="./images/icons.svg#envelope"></use>
               </svg>
               info@devstudio.com
             </a>
           </li>
-          <li class="header__item">
-            <a class="header__telephone" href="tel:+380961111111">
-              <svg class="header__icon" width="10" height="16">
+          <li class="header-contact__item">
+            <a class="header-contact__telephone" href="tel:+380961111111">
+              <svg class="header-contact__icon" width="10" height="16">
                 <use href="./images/icons.svg#smartphone"></use>
               </svg>
               +38 096 111 11 11
             </a>
           </li>
         </ul>
+        <!-- Mobile menu icon -->
+        <svg class="mobile-icon" width="40" height="40">
+          <use href="./images/icons.svg#mobile-menu"></use>
+        </svg>
       </div>
     </header>
 
@@ -132,7 +136,7 @@
       </div>
 
       <!-- Features -->
-      <section class="features" hidden>
+      <section class="features">
         <div class="container">
           <h2 class="visually-hidden">Наші особливості</h2>
 
@@ -366,7 +370,7 @@
       </section>
 
       <!-- Clients -->
-      <section class="clients" >
+      <section class="clients">
         <div class="container">
           <h2 class="section-heading">Постійні клієнти</h2>
 
