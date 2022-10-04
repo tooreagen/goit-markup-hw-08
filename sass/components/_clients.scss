@@ -1,7 +1,5 @@
 .clients {
-    @media screen and (max-width: ($breakpoint_desktop - 1)) {
-        @include section(60px, 60px);
-    }
+    @include section(60px, 60px);
 
     @media screen and (min-width: ($breakpoint_desktop)) {
         @include section(94px, 94px);
@@ -9,18 +7,15 @@
 }
 
 .clients__list {
-    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+    @media screen and (min-width: $breakpoint_mobile) {
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
-    }
-
-    @media screen and (max-width: ($breakpoint_desktop - 1)) {
         margin-top: 30px;
     }
 
     @media screen and (min-width: ($breakpoint_desktop)) {
-        display: flex;
+        flex-wrap: nowrap;
         justify-content: space-between;
         margin-top: 50px;
     }
@@ -29,11 +24,17 @@
 .clients__item {
     height: 92px;
 
-    @media screen and (max-width: ($breakpoint_tablet - 1)) {
+    @media screen and (max-width: ($breakpoint_mobile - 1)) {
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint_mobile) {
         width: 210px;
     }
 
-    @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
+    @media screen and (min-width: $breakpoint_tablet) {
         width: 226px;
     }
 
@@ -60,8 +61,6 @@
         fill: $accent_color;
         border-color: $accent_color;
     }
-
-
 }
 
 .client__icon {

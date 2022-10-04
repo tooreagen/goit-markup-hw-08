@@ -61,17 +61,67 @@
             </a>
           </li>
         </ul>
-        <!-- Mobile menu icon -->
-        <svg class="mobile-icon" width="40" height="40">
-          <use href="./images/icons.svg#mobile-menu"></use>
-        </svg>
+
+        <!-- Mobile menu button -->
+        <button type="button" class="menu-button js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="40" height="40">
+            <use href="./images/icons.svg#mobile-menu"></use>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu js-menu-container" id="mobile-menu">
+        <button class="menu-button js-close-menu">
+          <svg width="40" height="40">
+            <use href="./images/icons.svg#menu-close"></use>
+          </svg>
+        </button>
+        <!-- Mobile menu elements -->
+        <ul>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="./index.html">Студія</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="./portfolio.html">Портфоліо</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="">Контакти</a>
+          </li>
+        </ul>
+      
+        <!-- Mobile menu contacts -->
+        <ul class="mobile-menu__contact">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link mobile-menu__link--text-tel" href="tel:+380961111111">+38 096 111 11 11</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link mobile-menu__link--text-mail" href="mailto:info@devstudio.com">info@devstudio.com</a>
+          </li>
+        </ul>
+      
+        <!-- Mobile menu social -->
+        <ul class="mobile-menu__social">
+          <li class="mobile-menu__item--alignment">
+            <a class="mobile-menu__link mobile-menu__link--text-social" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer nofollow">Instagram</a>
+          </li>
+          <li class="mobile-menu__item--alignment">
+            <a class="mobile-menu__link mobile-menu__link--text-social" href="https://twitter.com/" target="_blank" rel="noopener noreferrer nofollow">Twitter</a>
+          </li>
+          <li class="mobile-menu__item--alignment">
+            <a class="mobile-menu__link mobile-menu__link--text-social" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer nofollow">Facebook</a>
+          </li>
+          <li class="mobile-menu__item--alignment">
+            <a class="mobile-menu__link mobile-menu__link--text-social" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer nofollow">LinkedIn</a>
+          </li>
+        </ul>
       </div>
     </header>
 
     <!-- Main -->
     <main>
       <!-- Banner/Hero -->
-      <section class="hero" hidden>
+      <section class="hero">
         <div class="container">
           <h1 class="hero__heading">Ефективні рішення для вашого бізнесу</h1>
           <button class="button hero__button--alignment" type="button" data-modal-open>Замовити послугу</button>
@@ -182,24 +232,60 @@
       </section>
 
       <!-- Services -->
-      <section class="services" hidden>
+      <section class="services">
         <div class="container">
           <h2 class="section-heading">Чим ми займаємося</h2>
           <ul class="services__list">
             <li class="services__item">
-              <img width="370" src="./images/box-1.jpg" alt="Розробник верстає макет" />
+            <picture>
+              <source
+                media="(min-width: 1200px)"
+                srcset="./images/box-1@1x.webp 1x, ./images/box-1@2x.webp 2x"
+                type="image/webp"
+              />
+              <source
+                media="(min-width: 1200px)"
+                srcset="./images/box-1@1x.jpg 1x, ./images/box-1@2x.jpg 2x"
+                type="image/jpg"
+              />
+              <img width="370" src="./images/box-1@1x.jpg" alt="Розробник верстає макет" />
+            </picture>
               <div class="services__footer">
                 <h3 class="services__subtitle">Десктопні додатки</h3>
               </div>
             </li>
             <li class="services__item">
-              <img width="370" src="./images/box-2.jpg" alt="Розробник адаптує сайт" />
+              <picture>
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/box-2@1x.webp 1x, ./images/box-2@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/box-2@1x.jpg 1x, ./images/box-2@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <img width="370" src="./images/box-2@1x.jpg" alt="Розробник адаптує сайт" />
+              </picture>
               <div class="services__footer">
                 <h3 class="services__subtitle">Мобільні додатки</h3>
               </div>
             </li>
             <li class="services__item">
-              <img width="370" src="./images/box-3.jpg" alt="Розробник обирає колір" />
+              <picture>
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/box-3@1x.webp 1x, ./images/box-3@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/box-3@1x.jpg 1x, ./images/box-3@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <img width="370" src="./images/box-3@1x.jpg" alt="Розробник обирає колір" />
+              </picture>
               <div class="services__footer">
                 <h3 class="services__subtitle">Дизайнерські рішення</h3>
               </div>
@@ -209,12 +295,47 @@
       </section>
 
       <!-- Team -->
-      <section class="team" hidden>
+      <section class="team">
         <div class="container">
           <h2 class="section-heading">Наша команда</h2>
           <ul class="team__list">
             <li class="team__item">
-              <img width="270" src="./images/photo-team-01.jpg" alt="Фото Ігора Дем'яненко" />
+              <picture>
+                <!-- Desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-01_lg-@1x.webp 1x, ./images/team/photo-team-01_lg-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-01_lg-@1x.jpg 1x, ./images/team/photo-team-01_lg-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-01_md-@1x.webp 1x, ./images/team/photo-team-01_md-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-01_md-@1x.jpg 1x, ./images/team/photo-team-01_md-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-01_sm-@1x.webp 1x, ./images/team/photo-team-01_sm-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-01_sm-@1x.jpg 1x, ./images/team/photo-team-01_sm-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <img src="./images/team/photo-team-01_sm-@1x.jpg" alt="Фото Ігора Дем'яненко" />
+              </picture>
               <div class="team__footer">
                 <h3 class="team__username">Ігор Дем'яненко</h3>
                 <p class="team__speciality" lang="en">Product Designer</p>
@@ -252,7 +373,42 @@
               </div>
             </li>
             <li class="team__item">
-              <img width="270" src="./images/photo-team-02.jpg" alt="Фото Ольги Рєпіної" />
+                <picture>
+                <!-- Desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-02_lg-@1x.webp 1x, ./images/team/photo-team-02_lg-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-02_lg-@1x.jpg 1x, ./images/team/photo-team-02_lg-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-02_md-@1x.webp 1x, ./images/team/photo-team-02_md-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-02_md-@1x.jpg 1x, ./images/team/photo-team-02_md-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-02_sm-@1x.webp 1x, ./images/team/photo-team-02_sm-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-02_sm-@1x.jpg 1x, ./images/team/photo-team-02_sm-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <img src="./images/team/photo-team-02_sm-@1x.jpg" alt="Фото Ольги Рєпіної" />
+              </picture>
               <div class="team__footer">
                 <h3 class="team__username">Ольга Рєпіна</h3>
                 <p class="team__speciality" lang="en">Frontend Developer</p>
@@ -290,7 +446,42 @@
               </div>
             </li>
             <li class="team__item">
-              <img width="270" src="./images/photo-team-03.jpg" alt="Фото Миколи Тарасова" />
+              <picture>
+                <!-- Desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-03_lg-@1x.webp 1x, ./images/team/photo-team-03_lg-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-03_lg-@1x.jpg 1x, ./images/team/photo-team-03_lg-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-03_md-@1x.webp 1x, ./images/team/photo-team-03_md-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-03_md-@1x.jpg 1x, ./images/team/photo-team-03_md-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-03_sm-@1x.webp 1x, ./images/team/photo-team-03_sm-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-03_sm-@1x.jpg 1x, ./images/team/photo-team-03_sm-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <img src="./images/team/photo-team-03_sm-@1x.jpg" alt="Фото Миколи Тарасова" />
+              </picture>
               <div class="team__footer">
                 <h3 class="team__username">Микола Тарасов</h3>
                 <p class="team__speciality" lang="en">Marketing</p>
@@ -328,7 +519,42 @@
               </div>
             </li>
             <li class="team__item">
-              <img width="270" src="./images/photo-team-04.jpg" alt="Фото Михайла Єрмакова" />
+              <picture>
+                <!-- Desktop screen -->
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-04_lg-@1x.webp 1x, ./images/team/photo-team-04_lg-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1200px)"
+                  srcset="./images/team/photo-team-04_lg-@1x.jpg 1x, ./images/team/photo-team-04_lg-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Tablet screen -->
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-04_md-@1x.webp 1x, ./images/team/photo-team-04_md-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/team/photo-team-04_md-@1x.jpg 1x, ./images/team/photo-team-04_md-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <!-- Mobile screen -->
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-04_sm-@1x.webp 1x, ./images/team/photo-team-04_sm-@2x.webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="./images/team/photo-team-04_sm-@1x.jpg 1x, ./images/team/photo-team-04_sm-@2x.jpg 2x"
+                  type="image/jpg"
+                />
+                <img src="./images/team/photo-team-04_sm-@1x.jpg" alt="Фото Михайла Єрмакова" />
+              </picture>
               <div class="team__footer">
                 <h3 class="team__username">Михайло Єрмаков</h3>
                 <p class="team__speciality" lang="en">UI Designer</p>
@@ -500,6 +726,13 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="./js/modal.js"></script>
+    <!-- Mobile menu script -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"></script>
+    <script defer src="./js/mobile-menu.js"></script>
   </body>
 </html>

@@ -1,6 +1,10 @@
-// .services {
-//     @extend %section;
-// }
+.services {
+    @include section(94px, 94px);
+
+    @media screen and (max-width: ($breakpoint_desktop - 1)) {
+        display: none;
+    }
+}
 
 .services__list {
     display: flex;

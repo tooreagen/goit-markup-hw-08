@@ -58,7 +58,6 @@
     color: $accent_color;
   }
 
-  // selecteded active page
   &--active-page::after {
     content: '';
 
@@ -73,13 +72,11 @@
     border-radius: 2px;
   }
 
-  // active page
   &--active-page {
     color: $accent_color;
   }
 }
 
-// animation link
 .header__item> :not(.header__link--active-page).header__link::after {
   content: '';
 
@@ -161,10 +158,4 @@
 
 .header-contact__icon {
   margin-right: 10px;
-}
-
-.mobile-icon {
-  @media screen and (min-width: $breakpoint_tablet) {
-    display: none;
-  }
 }

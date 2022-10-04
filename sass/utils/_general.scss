@@ -8,10 +8,14 @@
 }
 
 .container {
-  max-width: 480px;
+  max-width: $breakpoint_mobile - 1;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+
+  @media screen and (min-width: $breakpoint_mobile) {
+    max-width: $breakpoint_mobile;
+  }
 
   @media screen and (min-width: $breakpoint_tablet) {
     max-width: $breakpoint_tablet;
@@ -25,21 +29,28 @@
 body {
   font-family: $main_font;
   letter-spacing: 0.03em;
-  
+
   color: $main_text_color;
   background-color: $background_color;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 // semantic hidden header
@@ -59,9 +70,14 @@ img {
 // section heading
 .section-heading {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
 
   color: $heading_text_color;
+
+  @media screen and (min-width: $breakpoint_desktop) {
+    font-size: 36px;
+    line-height: 1.17;
+  }
 }

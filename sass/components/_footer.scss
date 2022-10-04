@@ -3,7 +3,7 @@
 
     @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
         padding-left: 76px;
-        padding-right: 86px;
+        padding-right: 89px;
     }
 
     background: $hero_footer_background;
@@ -17,22 +17,14 @@
 }
 
 .footer__address {
-    @media screen and (max-width: ($breakpoint_tablet - 1)) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
-        display: flex;
+    @media screen and (min-width: $breakpoint_tablet) {
+        flex-direction: row;
         align-items: baseline;
         justify-content: space-between;
-    }
-
-
-    @media screen and (min-width: ($breakpoint_desktop)) {
-        display: flex;
-        align-items: baseline;
     }
 }
 
@@ -139,11 +131,10 @@
 }
 
 .subscribe {
-    @media screen and (max-width: ($breakpoint_desktop - 1)) {
-        margin-top: 60px;
-    }
+    margin-top: 60px;
 
     @media screen and (min-width: ($breakpoint_desktop)) {
+        margin-top: 0px;
         margin-left: 93px;
     }
 }
@@ -178,7 +169,7 @@
 .subscribe__email {
     display: inline-block;
     padding: 15px 16px;
-    width: 358px;
+    width: 450px;
 
     font-size: 16px;
     line-height: 1.25;
@@ -200,7 +191,11 @@
         color: rgba(255, 255, 255, 0.6);
     }
 
-    @media screen and (max-width: ($breakpoint_desktop - 1)) {
-        width: 450px;
+    @media screen and (max-width: $breakpoint_mobile) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        width: 358px;
     }
 }

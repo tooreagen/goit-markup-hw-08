@@ -1,25 +1,58 @@
 .team {
-    // @extend %section;
+    @include section(60px, 60px);
     background: $background_team;
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        @include section(94px, 94px);
+    }
 }
 
 .team__list {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 30px;
+
+    @media screen and (min-width: $breakpoint_tablet) and (max-width: ($breakpoint_desktop - 1)) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
 }
 
 .team__item {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     background: $background_color;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
+
+    @media screen and (max-width: ($breakpoint_tablet - 1)) {
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
 }
 
 .team__footer {
-    padding: 30px 32px;
+    @media screen and (min-width: $breakpoint_mobile) {
+        padding: 30px 122px 24px 122px;
+    }
+
+    @media screen and (min-width: $breakpoint_tablet) {
+        padding: 30px 74px 24px 74px;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        padding: 30px 32px;
+    }
 }
 
 .team__username {
@@ -65,4 +98,3 @@
         background-color: $accent_color;
     }
 }
-

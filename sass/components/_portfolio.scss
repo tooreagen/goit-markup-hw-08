@@ -1,16 +1,18 @@
 .portfolio {
-    // @extend %section;
+    @include section(60px, 60px);
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        @include section(94px, 94px);
+    }
 }
 
-.filter-list { 
+.filter-list {
     display: flex;
-    justify-content: center;
-}
+    flex-wrap: wrap;
+    gap: 8px;
 
-.filter__item {
-    &:not(:first-child)
-    {
-        margin-left: 8px;
+    @media screen and (min-width: $breakpoint_tablet) {
+        justify-content: center;
     }
 }
 
@@ -51,7 +53,6 @@
     height: 100%;
 
     transform: translate(0%, 100%);
-
     transition: transform $animation-duration $animation-ttf;
 
     background: rgba(33, 150, 243, 0.9);
@@ -80,6 +81,18 @@
     border-left: 1px solid #EEEEEE;
     border-bottom: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
+
+    @media screen and (min-width: $breakpoint_mobile) {
+        width: 450px;
+    }
+
+    @media screen and (min-width: $breakpoint_tablet) {
+        width: 354px;
+    }
+
+    @media screen and (min-width: $breakpoint_desktop) {
+        width: 370px;
+    }
 }
 
 .portfolio__heading {

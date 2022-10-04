@@ -48,6 +48,14 @@
     background-color: $background_second_color;
     border-radius: 4px;
 
+    @media screen and (max-width: ($breakpoint_mobile - 1)) {
+        width: auto;
+    }
+
+    @media screen and (min-width: $breakpoint_mobile) {
+        width: 450px;
+    }
+
     @media screen and (min-width: $breakpoint_tablet) {
         width: 354px;
     }
