@@ -277,12 +277,11 @@ img {
 }
 
 .hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 118px;
+  padding-bottom: 118px;
   margin-left: auto;
   margin-right: auto;
   max-width: 1600px;
-  height: 600px;
   background-color: #2f303a;
   background-position: center;
   background-size: cover;
@@ -318,6 +317,12 @@ img {
   .hero {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/background/background_lg-@2x.jpg);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/background/background_lg-@2x.jpg);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
   }
 }
 
@@ -927,10 +932,9 @@ img {
   }
 }
 
-@media screen and (min-width: 480px) {
-  .team__footer {
-    padding: 30px 122px 24px 122px;
-  }
+.team__footer {
+  padding-top: 30px;
+  padding-bottom: 24px;
 }
 @media screen and (min-width: 768px) {
   .team__footer {
@@ -1002,6 +1006,9 @@ img {
   }
 }
 
+.clients__list {
+  margin-top: 30px;
+}
 @media screen and (min-width: 480px) {
   .clients__list {
     display: -webkit-box;
@@ -1010,7 +1017,6 @@ img {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     gap: 30px;
-    margin-top: 30px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1113,7 +1119,14 @@ img {
 }
 
 .portfolio__link {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
   -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1163,6 +1176,9 @@ img {
 
 /* END animation portfolio item */
 .portfolio__footer {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 20px 24px;
   border-left: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE;

@@ -42,9 +42,8 @@
 }
 
 .team__footer {
-    @media screen and (min-width: $breakpoint_mobile) {
-        padding: 30px 122px 24px 122px;
-    }
+    padding-top: 30px;
+    padding-bottom: 24px;
 
     @media screen and (min-width: $breakpoint_tablet) {
         padding: 30px 74px 24px 74px;

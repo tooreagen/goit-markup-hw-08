@@ -25,7 +25,10 @@
 
 .portfolio__link {
     @extend %link;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
     transition: box-shadow $animation-duration $animation-ttf;
 
     &:hover,
@@ -77,6 +80,7 @@
 /* END animation portfolio item */
 
 .portfolio__footer {
+    flex-grow: 1;
     padding: 20px 24px;
     border-left: 1px solid #EEEEEE;
     border-bottom: 1px solid #EEEEEE;
